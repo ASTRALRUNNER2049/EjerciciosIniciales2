@@ -28,14 +28,18 @@ public class ejercicio_dos : MonoBehaviour
     //int contador = 0;
     //string tallacamisa = "S";
 
-    
-    int vidas = 3;            
-    float exp = 4.5f;        
+
+    int vidas = 3;
+    float exp = 4.5f;
     char carac = 'A';
     int vidasPlayer1 = 11;
     int vidasPlayer2 = 22;
     int vidasPlayer3 = 33;
     int vidasPlayer4 = 44;
+
+    int puntuacion1 = 3;
+    int puntuacion2 = 7;
+    int puntuacion3 = 8;
 
     int AUXvidasplayer2;
 
@@ -47,7 +51,19 @@ public class ejercicio_dos : MonoBehaviour
     float Vidaspordos;
     float EXPportres;
     float Ej2coma4;
-     // Cuando inicializamos una variable, podemos asignarle cierto valor, pero no podemos calcular el valor que le queremos asignar.
+    float resultadomediapuntuaciones;
+
+    float oroPorSegundo = 7f;
+    float horas = 4f;
+    float segundosEnUnaHora = 3600f;
+    float oroTotal;
+
+    private float vidaInicial = 120f;
+    private float porcentajeVeneno = 3f;
+    private float vidaRestante;
+
+
+    // Cuando inicializamos una variable, podemos asignarle cierto valor, pero no podemos calcular el valor que le queremos asignar.
 
 
 
@@ -62,14 +78,16 @@ public class ejercicio_dos : MonoBehaviour
         resultadoPorcentaje = vidas % exp;
         Vidaspordos = vidas * 2;
         EXPportres = exp * 3;
-        Ej2coma4 = vidas + 77 -3 * 4;
+        Ej2coma4 = vidas + 77 - 3 * 4;
+
+        resultadomediapuntuaciones = puntuacion1 + puntuacion2 + puntuacion3 / 3;
 
         AUXvidasplayer2 = vidasPlayer2;
         vidasPlayer2 = vidasPlayer3;
         vidasPlayer3 = vidasPlayer1;
         vidasPlayer1 = vidasPlayer4;
         vidasPlayer4 = AUXvidasplayer2;
-       
+
 
         Debug.Log("Vidas: " + vidas);
         Debug.Log("Experiencia: " + exp);
@@ -81,16 +99,34 @@ public class ejercicio_dos : MonoBehaviour
         Debug.Log("Vidas por dos: " + Vidaspordos);
         Debug.Log("EXP por tres: " + EXPportres);
         Debug.Log("Ejercicio 2.4: " + Ej2coma4);
-        
+        Debug.Log("Jugador 1 tiene todas estas vidas: " + vidasPlayer1);
+        Debug.Log("Jugador 2 tiene todas estas vidas: " + AUXvidasplayer2);
+        Debug.Log("Jugador 3 tiene todas estas vidas: " + vidasPlayer3);
+        Debug.Log("Jugador 4 tiene todas estas vidas: " + vidasPlayer4);
+        Debug.Log("El resultado de la media de las tres puntuaciones (3,7,8) es:  " + resultadomediapuntuaciones);
+
+        oroTotal = oroPorSegundo * horas * segundosEnUnaHora;
+        Debug.Log("Oro total farmeado en " + horas + " horas: " + oroTotal + " unidades.");
+
+        vidaRestante = vidaInicial;
+
+        for (int turno = 1; turno <= 5; turno++)
+        {
+
+            float dañoTurno = vidaInicial * (porcentajeVeneno / 100);
+            vidaRestante -= dañoTurno;
+            Debug.Log("Turno " + turno + ": Vida restante = " + vidaRestante + " unidades.");
+            porcentajeVeneno += 3f;
+
+
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
+
+        }
 
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
 
 }
