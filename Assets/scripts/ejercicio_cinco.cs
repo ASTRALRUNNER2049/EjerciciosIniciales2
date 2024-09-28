@@ -124,22 +124,22 @@ public class ejercicio_cinco : MonoBehaviour
         switch (tipoEnemigo)
         {
             case 1:
-                Debug.Log("Enemigo tipo 1: pupa = 350, Vida = 650");
+                Debug.Log("Enemigo  1: pupa = 350, Vida = 650");
                 break;
             case 2:
-                Debug.Log("Enemigo tipo 2: Pupa = 300, Vida = 550");
+                Debug.Log("Enemigo  2: Pupa = 300, Vida = 550");
                 break;
             case 3:
-                Debug.Log("Enemigo tipo 3: pupa = 300, Vida = 500");
+                Debug.Log("Enemigo  3: pupa = 300, Vida = 500");
                 break;
             case 4:
-                Debug.Log("Enemigo tipo 4: Pupa = 310, Vida = 460");
+                Debug.Log("Enemigo  4: Pupa = 310, Vida = 460");
                 break;
             case 5:
-                Debug.Log("Enemigo tipo 5: pupa = 280, Vida = 490");
+                Debug.Log("Enemigo  5: pupa = 280, Vida = 490");
                 break;
             case 6:
-                Debug.Log("Enemigo tipo 6: Pupa = 360, Vida = 520");
+                Debug.Log("Enemigo  6: Pupa = 360, Vida = 520");
                 break;
             default:
                 Debug.LogError("Tipo de enemigo no válido.");
@@ -147,25 +147,22 @@ public class ejercicio_cinco : MonoBehaviour
         }
 
         // EJ 5.10 
-        if (temperatura <= 0)
+        if (temperatura <= 10)
         {
-            Debug.Log("Clima: Helado");
+            Debug.Log("Clima: frio");
         }
-        else if (temperatura > 0 && temperatura <= 15)
+        else if (temperatura > 10 && temperatura <= 20)
         {
-            Debug.Log("Clima: Frío");
+            Debug.Log("Clima: Nublado");
         }
-        else if (temperatura > 15 && temperatura <= 25)
+        else if (temperatura > 20 && temperatura <= 30)
         {
-            Debug.Log("Clima: Templado");
+            Debug.Log("Clima: Caluroso");
         }
-        else if (temperatura > 25 && temperatura <= 35)
+        else if (temperatura >= 30)
         {
-            Debug.Log("Clima: Cálido");
+            Debug.Log("Clima: Tropical");
         }
-        else
-        {
-            Debug.Log("Clima: Caliente");
-        }
+        
     }
 }
