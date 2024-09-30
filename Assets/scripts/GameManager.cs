@@ -30,22 +30,18 @@ public class GameManager : MonoBehaviour
         if (!Ejecutado)
         {
             personaje1.SetNombre("Guerrero");
-            personaje1.Vida(1000);
+            personaje1.vida(1000);
             personaje1.Experiencia(5000);
             Debug.Log($"{personaje1.Nombre()} tiene nivel {personaje1.CalcularNivel()}");
 
             personaje2.SetNombre("Mago");
-            personaje2.Vida(800);
+            personaje2.vida(800);
             personaje2.Experiencia(4500);
             Debug.Log($"{personaje2.Nombre()} tiene nivel {personaje2.CalcularNivel()}");
 
             Ejecutado = true;
         }
     }
-
-    
-    
-
 
     void Update()
     {

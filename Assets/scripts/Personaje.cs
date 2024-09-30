@@ -13,7 +13,6 @@ public class Personaje : MonoBehaviour
     public KeyCode recargarTecla;
     public float ataque;
     public float velocidad;
-    public float vida;
     public Personaje objetivo;
 
     public float CalcularNivel()
@@ -26,12 +25,13 @@ public class Personaje : MonoBehaviour
         this.nombre = nombre;
     }
 
-    public void Vida(float vida)
+    public void Vida()
     {
         this.vida = vida;
+        
     }
 
-    public void Experiencia(float experiencia)
+    public void Experiencia()
     {
         this.experiencia = experiencia;
     }
