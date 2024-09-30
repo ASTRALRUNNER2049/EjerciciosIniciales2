@@ -14,13 +14,14 @@ public class Personaje : MonoBehaviour
     public float ataque;
     public float velocidad;
     public Personaje objetivo;
+    private bool miTurno;
 
     public float CalcularNivel()
     {
         return experiencia / 1000;
     }
 
-    public void SetNombre(string nombre)
+    public void SetNombre(string v)
     {
         this.nombre = nombre;
     }
@@ -31,7 +32,7 @@ public class Personaje : MonoBehaviour
         
     }
 
-    public void Experiencia()
+    public void Experiencia(int v)
     {
         this.experiencia = experiencia;
     }
@@ -45,6 +46,7 @@ public class Personaje : MonoBehaviour
     {
         return vida;
     }
+
     // Update is called once per frame
     void Update()
     {
